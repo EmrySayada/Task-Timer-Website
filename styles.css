@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+*{
+    /* background-color: #1F1F20; */
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(24, 24, 24);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.list-container{
+    display: block;
+}
+
+h1{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Tassk container*/
+
+.Task{
+    position: relative;
+    min-height: 45px;
+    width: 550px;
+    background-color: #1F1F20;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px #292929, 
+            -10px -10px 20px #0e0d0d;
+    border: none;
+    transition: all 0.5s 0s ease;
+    
+}
+
+.Task:hover{
+    box-shadow: none;
+    transition: all 0.5s 0s ease;
+}
+
+.Task .text{
+    background-color: #1F1F20;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 17px;
+}
+
+.create-task-btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.popup-container{
+    z-index: 999;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1F1F20;
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 150px 20px black;
+    transition: all 0.5s 0s ease;
+}
+
+#popUp{
+    transition: all 0.5s 0s ease;
+}
+
+.popup-container .upperText{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #1F1F20;
+    transition: all 0.5s 0s ease;
+}
+
+.popup-container .nameForm{
+    display: flex;
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    background-color: #1F1F20;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s 0s ease;
+}
+
+.popup-container .button-container-sub{
+    display: inline-block;
+    justify-content: left;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: #1F1F20;
+    transition: all 0.5s 0s ease;
+}
+
+.popup-container .submit{
+    background-color: #1F1F20;
+    height: 30px;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius:5px;
+    transition: all 0.5s 0s ease;
+}
+
+.popup-container .submit:hover{
+    box-shadow: 0px 0px 20px 0.5px white;
+}
+
+.popup-container .button-container-can{
+    display: inline-block;
+    justify-content: right;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: #1F1F20;
+    transition: all 0.5s 0s ease;
+}
+
+.popup-container .cancel{
+    background-color: #1F1F20;
+    height: 30px;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius:5px;
+    transition: all 0.5s 0s ease;
+}
+
+.popup-container .cancel:hover{
+    box-shadow: 0px 0px 20px 0.5px white;
+}
+
+.create-task-btn{
+    border: none;
+    position: relative;
+    height: 45px;
+    width: 550px;
+    background-color: #1F1F20;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px #292929, 
+            -10px -10px 20px #0e0d0d;
+    transition: all 0.5s 0s ease;
+}
+
+.create-task-btn .btn-text{
+    background-color: #1F1F20;
+    color: white;
+    font-size: 16px;
+}
+
+.create-task-btn:hover{
+    box-shadow: none;
+    transition: all 0.5s 0s ease;
+}
+
+.task-container{
+    display: none;
+    background-color: rgb(24, 24, 24);
+    height: 100%;
+    width: 100%;
+}
+
+.task-container .header .title-continer{
+    position: relative;
+    min-height: 50px;
+    width: 550px;
+    background-color: #1F1F20;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px #292929, 
+            -10px -10px 20px #0e0d0d;
+    border: none;
+    transition: all 0.5s 0s ease;
+}
+
+.task-container .header .title-continer .text{
+    background-color: #1F1F20;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+
+
+
+/* task des */
+.task-container .description-container{
+    position: relative;
+    min-height: 45px;
+    width: 550px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s 0s ease;
+} 
+
+.task-container .description-container .title{
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    color: white;
+    font-size: 30px;
+}
+
+.task-container .description-container .des-text{
+    width: 500px;
+    height: 150px;
+    border: none;
+    color: white;
+    resize: none;
+
+}
+
+/* end of task des*/
+
+/* timer */
+.timer-container{
+    background-color: #1F1F20;
+    height: 130px;
+    width: 300px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    box-shadow: 10px 10px 20px #292929, 
+    -10px -10px 20px #0e0d0d;
+    border-radius: 10px;
+}
+
+.timer-container .nums-container{
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timer-container .minute-num{
+    color: white;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-size: 64px;
+    margin-right: 10px;
+}
+
+.timer-container .seprerator{
+    background-color: transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.timer-container .seprerator .sep1{
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.timer-container .seprerator .sep2{
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.timer-container .second-num{
+    color: white;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-size: 64px;
+    margin-left: 10px;
+}
+
+/* start timer button*/
+
+.task-container .start-timer-button-container .start-timer-btn{
+    border: none;
+    position: relative;
+    height: 50px;
+    width: 200px;
+    background-color: #1F1F20;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px #292929, 
+            -10px -10px 20px #0e0d0d;
+    transition: all 0.5s 0s ease;
+}
+
+.task-container .start-timer-button-container .start-timer-btn .text{
+    color:white;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.task-container .start-timer-button-container .start-timer-btn:hover{
+    box-shadow: 0px 0px 20px 0.5px white;
+    transition: all 0.5s 0s ease-in-out;
+}
+
+
+.task-container .back-button-container .back-btn{
+    border: none;
+    position: relative;
+    height: 50px;
+    width: 200px;
+    background-color: #1F1F20;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px #292929, 
+            -10px -10px 20px #0e0d0d;
+    transition: all 0.5s 0s ease;
+}
+
+.task-container .back-button-container .back-btn .text{
+    color:white;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.task-container .back-button-container .back-btn:hover{
+    box-shadow: 0px 0px 20px 0.5px white;
+    transition: all 0.5s 0s ease-in-out;
+}
+
+
+
+/* Timer popup */
+
+.timer-popup-container{
+    z-index: 999;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1F1F20;
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 150px 20px black;
+    transition: all 0.5s 0s ease;
+}
+
+#timerPopUp{
+    transition: all 0.5s 0s ease;
+}
+
+.timer-popup-container .time{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #1F1F20;
+    transition: all 0.5s 0s ease;
+}
+
+.timer-popup-container .form-container{
+    display: flex;
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+    width: 120px;
+    color: white;
+    background-color: #1F1F20;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s 0s ease;
+}
+
+.timer-popup-container .form-container .sep{
+    background-color: transparent;
+    font-size: 24px;
+}
+
+.timer-popup-container .form-container .minutesForm{
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.timer-popup-container .form-container .secondsForm{
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: white;
+}
+
+.timer-popup-container .button-container-sub{
+    display: inline-block;
+    justify-content: left;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: #1F1F20;
+    transition: all 0.5s 0s ease;
+}
+
+.timer-popup-container .submit{
+    background-color: #1F1F20;
+    height: 30px;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius:5px;
+    transition: all 0.5s 0s ease;
+}
+
+.timer-popup-container .submit:hover{
+    box-shadow: 0px 0px 20px 0.5px white;
+}
+
+.timer-popup-container .button-container-can{
+    display: inline-block;
+    justify-content: right;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: #1F1F20;
+    transition: all 0.5s 0s ease;
+}
+
+.timer-popup-container .cancel{
+    background-color: #1F1F20;
+    height: 30px;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius:5px;
+    transition: all 0.5s 0s ease;
+}
+
+.timer-popup-container .cancel:hover{
+    box-shadow: 0px 0px 20px 0.5px white;
+}
+
+.create-task-btn{
+    border: none;
+    position: relative;
+    height: 45px;
+    width: 550px;
+    background-color: #1F1F20;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px #292929, 
+            -10px -10px 20px #0e0d0d;
+    transition: all 0.5s 0s ease;
+}
+
+.create-task-btn .btn-text{
+    background-color: #1F1F20;
+    color: white;
+    font-size: 16px;
+}
+
+.create-task-btn:hover{
+    box-shadow: none;
+    transition: all 0.5s 0s ease;
+}
